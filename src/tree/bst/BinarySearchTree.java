@@ -1,6 +1,10 @@
 package tree.bst;
 
-public class Tree {
+public class BinarySearchTree {
+
+    /**
+     * Tree traversal and printing - Left Order
+     */
 
     public static void printTree_LeftOrder(Node node) {
         if (node != null) {
@@ -15,6 +19,9 @@ public class Tree {
         }
     }
 
+    /**
+     * Tree traversal and printing - Right Order
+     */
     public static void printTree_RightOrder(Node node) {
         if (node.left != null) {
             printTree_RightOrder(node.left);
@@ -28,6 +35,9 @@ public class Tree {
         }
     }
 
+    /**
+     * Tree traversal and printing - In Order
+     */
     public static void printTree_InOrder(Node node) {
         if (node.left != null) {
             printTree_InOrder(node.left);
@@ -44,12 +54,7 @@ public class Tree {
 
     /**
      * Insert values to a Binary Search Tree
-     *
-     * @param node
-     * @param val
-     * @return
      */
-
     public static Node insertNode(Node node, int val) {
         if (node == null) {
             return new Node(val);
@@ -61,7 +66,9 @@ public class Tree {
         return node;
     }
 
-
+    /**
+     * Creates a BST Tree with values in the 'bstInput' and displays tree (in-order, left-order and right-order)
+     */
     public static void main(String args[]) {
         String bstInput = "10,5,15,30,25,35";
         Node head = null, node = null;
@@ -79,8 +86,10 @@ public class Tree {
 
         System.out.println( "Printing Tree -> In Order <-" + head );
         printTree_InOrder(head);
+
         System.out.println( "Printing Tree -> Left Order <-" + head );
         printTree_LeftOrder(head);
+
         System.out.println( "Printing Tree -> Right Order <-" + head );
         printTree_RightOrder(head);
     }
